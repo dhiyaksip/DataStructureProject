@@ -1,6 +1,5 @@
 # Data Structure Project - Group 2
 
-# Data Structure Project - Group 2
 
 ## Anggota
 - Afiqoh Imatul Muntaha
