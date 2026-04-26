@@ -2,11 +2,11 @@
 
 
 ## Anggota
-- Afiqoh Imatul Muntaha
-- Gabriel Aurelia
-- Jonatan Setia Bayu Permana
-- Muhammad Bagas Setya Novansyah
-- Naila Nazilatul Fitri
+AFIQOH A IMATUL MUNTAHA 2902705292
+MUHAMMAD BAGAS SETYA NOVANSYAH 2902694420
+JONATAN SETIA BAYU PERMANA 2902722121
+NAILA NAZILATUL FITRI 2902708331
+GABRIEL AURELIA 2902716554
 
 ## Fitur
 - Queue → Sistem antrean
