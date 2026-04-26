@@ -1,5 +1,19 @@
 # Data Structure Project - Group 2
 
+# Data Structure Project - Group 2
+
+## Anggota
+- Afiqoh Imatul Muntaha
+- Gabriel Aurelia
+- Jonatan Setia Bayu Permana
+- Muhammad Bagas Setya Novansyah
+- Naila Nazilatul Fitri
+
+## Fitur
+- Queue → Sistem antrean
+- Stack → Undo/Redo
+- Linked List → Data mahasiswa
+
 ## Deskripsi
 Project ini mengimplementasikan:
 - Queue (Sistem Antrean)
