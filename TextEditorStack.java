@@ -10,30 +10,25 @@ public class TextEditorStack {
         undoStack.push(currentText);
         currentText += teks;
         redoStack.clear();
-        System.out.println("Teks sekarang: " + currentText);
     }
 
     public static void undo() {
-        if (undoStack.isEmpty()) {
-            System.out.println("Tidak ada undo.");
-            return;
+        if (!undoStack.isEmpty()) {
+            redoStack.push(currentText);
+            currentText = undoStack.pop();
+            System.out.println("Undo: \"" + currentText + "\"");
         }
-        redoStack.push(currentText);
-        currentText = undoStack.pop();
-        System.out.println("Undo: " + currentText);
     }
 
     public static void redo() {
-        if (redoStack.isEmpty()) {
-            System.out.println("Tidak ada redo.");
-            return;
+        if (!redoStack.isEmpty()) {
+            undoStack.push(currentText);
+            currentText = redoStack.pop();
+            System.out.println("Redo: \"" + currentText + "\"");
         }
-        undoStack.push(currentText);
-        currentText = redoStack.pop();
-        System.out.println("Redo: " + currentText);
     }
 
     public static void tampilkan() {
-        System.out.println("Teks saat ini: " + currentText);
+        System.out.println("\nTeks saat ini: \"" + currentText + "\"");
     }
 }

@@ -3,7 +3,7 @@ public class StudentLinkedList {
     static class Node {
         String nim, nama;
         int nilai;
-        Node prev, next;
+        Node next;
 
         Node(String nim, String nama, int nilai) {
             this.nim = nim;
@@ -12,56 +12,45 @@ public class StudentLinkedList {
         }
     }
 
-    static Node head = null, tail = null;
+    static Node head = null;
 
     public static void tambahMahasiswa(String nim, String nama, int nilai) {
         Node baru = new Node(nim, nama, nilai);
+
         if (head == null) {
-            head = tail = baru;
+            head = baru;
         } else {
-            tail.next = baru;
-            baru.prev = tail;
-            tail = baru;
-        }
-        System.out.println("Tambah: " + nama);
-    }
-
-    public static void hapusMahasiswa(String nim) {
-        Node cur = head;
-        while (cur != null) {
-            if (cur.nim.equals(nim)) {
-                if (cur.prev != null) cur.prev.next = cur.next;
-                else head = cur.next;
-
-                if (cur.next != null) cur.next.prev = cur.prev;
-                else tail = cur.prev;
-
-                System.out.println("Hapus: " + cur.nama);
-                return;
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
             }
-            cur = cur.next;
+            temp.next = baru;
         }
     }
 
     public static void updateNilai(String nim, int nilaiBaru) {
-        Node cur = head;
-        while (cur != null) {
-            if (cur.nim.equals(nim)) {
-                cur.nilai = nilaiBaru;
-                System.out.println("Update nilai " + cur.nama + " -> " + nilaiBaru);
+        Node temp = head;
+        while (temp != null) {
+            if (temp.nim.equals(nim)) {
+                temp.nilai = nilaiBaru;
+                System.out.println("\nMengupdate nilai mahasiswa (" + temp.nama + " -> " + nilaiBaru + ")");
                 return;
             }
-            cur = cur.next;
+            temp = temp.next;
         }
     }
 
-    public static void cetakDaftar() {
+    public static void tampilkan() {
         System.out.println("\nDaftar Mahasiswa:");
-        Node cur = head;
+        Node temp = head;
         int i = 1;
-        while (cur != null) {
-            System.out.println(i++ + ". " + cur.nama + " (" + cur.nim + ") = " + cur.nilai);
-            cur = cur.next;
+
+        while (temp != null) {
+            System.out.println(i + ". NIM: " + temp.nim +
+                    ", Nama: " + temp.nama +
+                    ", Nilai: " + temp.nilai);
+            temp = temp.next;
+            i++;
         }
     }
 }
